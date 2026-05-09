@@ -40,12 +40,3 @@ exp(coef(model))
 model_2 = glm(Survived ~ Fare, data = titanic, family = binomial)
 Fare_seq = seq(min(titanic$Fare,na.rm = TRUE), max(titanic$Fare, na.rm = TRUE), length.out = 100)
 pred_prob = predict(model_2, newdata = data.frame(Fare = Fare_seq), type = "response")
-
-plot(Fare_seq, 
-     pred_prob, 
-     type = 'l',
-     lwd = 3,
-     xlab = "Fare",
-     ylab = "Predicted Survival Probability",
-     main = "Logistic Regression Probability Curve"
-     )
