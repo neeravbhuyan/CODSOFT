@@ -1,5 +1,5 @@
-setwd('C:/Users/NEERAV/OneDrive/Desktop/CODSOFT')
-titanic = read.csv('Titanic-Dataset.csv')
+setwd('C:/Users/NEERAV/OneDrive/Desktop/CODSOFT') #set working directory to file path
+titanic = read.csv('Titanic-Dataset.csv') #import dataset into R
 
 # Data Cleaning
 titanic$Survived = as.numeric(titanic$Survived)
@@ -17,6 +17,10 @@ test = titanic[-index,]
 
 # Defining the logistic regression model
 model = glm(Survived ~ Pclass + Sex + Age + Fare + SibSp + Parch, data = train, family = binomial)
+"""
+Since our response variable is binary(either survived or not survived), we use logistic regression to compute probability whether a passenger survided the wreck
+or not.
+"""
 
 # Model Summary
 summary(model)
@@ -32,11 +36,11 @@ table(Prediction = pred, Actual = test$Survived)
 
 # Accuracy check
 mean(pred == test$Survived)
-
+"""
+The model is accurate almost 79% of the time. This was due to the fact the the training data was comparatively less.
+"""
 # odds ratio
 exp(coef(model))
-
-# probability curve for fare
-model_2 = glm(Survived ~ Fare, data = titanic, family = binomial)
-Fare_seq = seq(min(titanic$Fare,na.rm = TRUE), max(titanic$Fare, na.rm = TRUE), length.out = 100)
-pred_prob = predict(model_2, newdata = data.frame(Fare = Fare_seq), type = "response")
+"""
+Provided the odds of surviving to not surviving for passengers of different class, sex, no. of relatives onboard, etc...
+"""
