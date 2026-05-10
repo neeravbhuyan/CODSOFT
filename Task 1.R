@@ -18,7 +18,7 @@ test = titanic[-index,]
 # Defining the logistic regression model
 model = glm(Survived ~ Pclass + Sex + Age + Fare + SibSp + Parch, data = train, family = binomial)
 """
-Since our response variable is binary(either survived or not survived), we use logistic regression to compute probability whether a passenger survided the wreck
+Since the response variable is binary(either survived or not survived), logistic regression was used to compute probability whether a passenger survided the wreck
 or not.
 """
 
