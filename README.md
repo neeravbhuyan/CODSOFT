@@ -92,7 +92,7 @@ Forecast product sales based on advertising expenditure across different media c
 ## How to Run
 
 1. Clone this repository.
-2. Open any `.R` file in **RStudio**.
+2. Open any `.R` file in **RStudio**(For Task-2, open the `.py` file in any python IDE).
 3. Update the `setwd(...)` path at the top of the file to match your local directory.
 4. Install any missing packages using `install.packages("package_name")`.
 5. Run the script.
@@ -101,12 +101,13 @@ Forecast product sales based on advertising expenditure across different media c
 
 ## Requirements
 
-| Package        | Used In         |
-|----------------|-----------------|
-| Base R         | Task 1, Task 3  |
-| `dplyr`        | Task 2          |
-| `randomForest` | Task 2          |
-| `caret`        | Task 2          |
+| Package            | Used In         |
+|--------------------|-----------------|
+| Base R             | Task 1, Task 3  |
+| `matplotlib.pyplot`| Task 2          |
+| `numpy`            | Task 2          |
+| `pandas`           | Task 2          |
+| `scikit-learn`     | Task 2          |  
 
 ---
 
