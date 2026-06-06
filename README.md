@@ -8,7 +8,7 @@ This repository contains R-based solutions for the Data Science internship tasks
 
 ```
 ├── Task_1.R               # Titanic Survival Prediction
-├── Task_2.R               # Movie Rating Prediction
+├── Task_2.py               # Movie Rating Prediction
 ├── Task_3.R               # Sales Prediction
 ├── Titanic-Dataset.csv    # Dataset for Task 1
 ├── movie-rating.csv       # Dataset for Task 2
@@ -42,20 +42,20 @@ Predict whether a passenger aboard the Titanic survived or not, based on demogra
 
 ## Task 2 — Movie Rating Prediction
 
-**File:** `Task_2.R`  
+**File:** `Task_2.py`  
 **Dataset:** `movie-rating.csv`
 
 ### Objective
 Predict the rating of a movie based on features like genre, director, and cast using regression techniques.
 
 ### Approach
-- **Model:** Random Forest Regression (`randomForest`, 500 trees)
+- **Model:** Random Forest Regression (`sklearn.ensemble::RandomForestRegressor`, 500 trees)
 - **Features used:** Year, Duration, Votes, Genre, Director, Actor 1, Actor 2, Actor 3
 - **Data Cleaning:** Stripped formatting characters from `Year`, `Duration`, and `Votes`; removed rows with missing or blank critical fields
-- **Train/Test Split:** 80/20 using `caret::createDataPartition`
+- **Train/Test Split:** 80/20 using `sklearn.model_selection::train_test_split`
 
 ### Libraries
-`dplyr`, `randomForest`, `caret`
+`matplotlib.pyplot`, `numpy`, `pandas`,`scikit-learn`
 
 ### Evaluation
 - RMSE (Root Mean Squared Error)
